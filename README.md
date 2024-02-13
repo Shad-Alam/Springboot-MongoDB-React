@@ -25,15 +25,15 @@
   - npm update <br/>
   - npm start <br/> <br/>
   
-  <br/> 
+<br/> 
 
-	![ezcv logo](01.png)
+![ezcv logo](https://github.com/Shad-Alam/Springboot-MongoDB-React/blob/main/Screenshots/1.png)
 
-  <br/>
+<br/>
 
-	![ezcv logo](02.png)
+![ezcv logo](https://github.com/Shad-Alam/Springboot-MongoDB-React/blob/main/Screenshots/2.png)
 	
-  <br/>
+<br/>
 
-	![ezcv logo](02.png)
+![ezcv logo](https://github.com/Shad-Alam/Springboot-MongoDB-React/blob/main/Screenshots/3.png)
 
