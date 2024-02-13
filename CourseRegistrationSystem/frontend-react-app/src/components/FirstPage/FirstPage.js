@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 
 const Firstpage = () => {
     const [studentId, setStudentId] = useState("");
@@ -14,7 +14,7 @@ const Firstpage = () => {
     const [passingYear, setPassingYear] = useState("");
     const [address, setAddress] = useState("");
 
-      const hd = { 
+    const hd = { 
         'studentId': studentId,
         'name': name,
         'gender': gender,

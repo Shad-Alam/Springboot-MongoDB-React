@@ -22,7 +22,6 @@ const Firstpage = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const signUp = () => navigate("/firstPage", { replace: true });
-    const login = () => navigate("/firstPage", { replace: true });
 
     return (
         <div className="container2" id="">
@@ -59,7 +58,8 @@ const Firstpage = () => {
                                                 uname = information[a].studentId;
                                                 pass = information[a].passingYear;
                                                 if(uname===username && password===pass){
-                                                    login();
+                                                    navigate("/dashboardPage", {state: information[a].id});
+                                                    break;
                                                 }
                                             }
                                         }}  id="calculate" className="mt-3 button-style1" type="button"> Log In </button>
