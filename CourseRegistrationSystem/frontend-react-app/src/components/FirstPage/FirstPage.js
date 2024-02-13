@@ -1,50 +1,88 @@
 import {useNavigate} from 'react-router-dom';
 import React,{useState,useEffect} from 'react';
 import { useLocation } from "react-router-dom";
-import Axios from 'axios';
+// import http from './http-common';
+import axios from 'axios';
 
 function getValue(id){
     let value = document.getElementById(id).value;
     return value;
 }
 
-const Firstpage = () => {
-    const navigate = useNavigate();
 
-    const STUDENT_API_BASE_URL = "http://localhost:8080/api/student/add";
+const save = (e) => {
+    e.preventDefault();
 
     
-    const save = () => {
-        // let studentId = getValue("studentId");
-        // let name = getValue("name");
-        // let gender = getValue("gender");
-        // let phone = getValue("phone");
-        // let email = getValue("email");
-        // let degree = getValue("degree");
-        // let institute = getValue("institute");
-        // let cgpa = getValue("cgpa");
-        // let passingYear = getValue("passingYear");
-        // let address = getValue("address");
-        // console.log(name);
 
-        // // let info = `{
-        // //         "studentId":"${studentId}",
-        // //         "name":"${name}",
-        // //         "gender":"${gender}",
-        // //         "phone":"${phone}",
-        // //         "email":"${email}",
-        // //         "degree":"${degree}",
-        // //         "institute":"${institute}",
-        // //         "gpa":"${cgpa}",
-        // //         "passingYear":"${passingYear}",
-        // //         "address":"${address}"
-        // //     }
-        // // `;
-        // Axios.post(STUDENT_API_BASE_URL, info);
 
-        // console.log("OK");
-        // alert("Great Shot!");
-    }
+    console.log("HLLLdkdkdddidid");
+    //logMovies();
+    
+    // let studentId =getValue("studentId");
+    // let name =  getValue("name");
+    // let gender =  getValue("gender");
+    // let phone =  getValue("phone");
+    // let email =  getValue("email");
+    // let degree =  getValue("degree");
+    // let institute =  getValue("institute");
+    // let gpa =  getValue("gpa");
+    // let passingYear =  getValue("passingYear");
+    // let address = getValue("address");
+
+    // http.post("/student/add", studentId);
+
+    // const response = await Axios.post("/api/student/add",{
+    //     studentId: studentId,
+    //     name: name,
+    //     gender: gender,
+    //     phone: phone,
+    //     email: email,
+    //     degree: degree,
+    //     institute: institute,
+    //     gpa: gpa,
+    //     passingYear: passingYear,
+    //     address: address
+    // });
+    // console.log(response.data);
+    
+
+    // let result = await fetch(STUDENT_API_BASE_URL,{
+    //     method: "POST",
+    //     body: JSON.stringify({studentId,name,gender,phone,email,degree,institute,gpa,passingYear,address}),
+    //     headers:{
+    //         'Content-Type': 'application/json'
+    //     }
+    // });
+    // result = await result.json;
+    // localStorage.setItem("university",JSON.stringify(result));
+
+
+    // alert("Great Shot!");
+}
+
+
+const Firstpage = () => {
+    const getData = (page) => {
+        axios.get(
+          `http://localhost:8080/api/student/get/all`
+        )
+        .then((response) => {
+          console.log(response)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    };
+
+    useEffect(() => {
+        getData();
+        // fetch('http://localhost:8080/api/student/get/all')
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     console.log(data);
+        // })
+    }, []);
 
     return (
         <div className="container1" id="page-1">
