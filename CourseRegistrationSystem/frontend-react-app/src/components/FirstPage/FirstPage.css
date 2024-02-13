@@ -25,3 +25,77 @@
     height: 50px;
     padding: 10px;
 }
+
+
+/* heading part */
+.heading-style{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(34, 110, 63);
+    /* margin-top: 37px;
+    margin-bottom: 38px; */
+    text-align: center;
+}
+
+main1{
+    background-color: green;
+}
+
+.main-style{
+    padding-bottom: 5px;
+}
+
+
+.text-style1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+}
+
+.text-style2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.input-style1{
+    width: 100%;
+    border: 1px solid green;
+    font-size: 18px;
+    text-align: center;
+}
+
+.button-style1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid white;
+}
+
+.button-style2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    background-color: blue;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid white;
+}
+
+.wrap-style{
+    word-wrap: normal;
+}

@@ -46,66 +46,87 @@ const Firstpage = () => {
 
     return (
         <div className="container1" id="page-1">
-            <div className="m-4">
-            <form>
-                <label className="m-2">
-                <input id="studentId" value={studentId} onChange={e => setStudentId(e.target.value)} type="text" placeholder="Enter student ID"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="name" value={name} onChange={e => setName(e.target.value)} type="text" placeholder="Enter name"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="gender" value={gender} onChange={e => setGender(e.target.value)} type="text" placeholder="Enter gender"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="phone" value={phone} onChange={e => setPhone(e.target.value)} type="text" placeholder="Enter phone"/>
-                </label>
-        
-        
-                <label className="m-2">
-                <input id="email" value={email} onChange={e => setEmail(e.target.value)} type="text" placeholder="Enter email address"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="degree" value={degree} onChange={e => setDegree(e.target.value)} type="text" placeholder="Enter degree"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="institute" value={institute} onChange={e => setInstitute(e.target.value)} type="text" placeholder="Enter university name"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="cgpa" value={gpa} onChange={e => setGpa(e.target.value)} type="text" placeholder="Enter cgpa"/>
-                </label>
-        
-                <label className="m-2">
-                <input id="passingYear" value={passingYear} onChange={e => setPassingYear(e.target.value)} type="text" placeholder="Enter passingYear"/>
-                </label>
-        
-        
-                <label className="m-2">
-                <input id="address" value={address} onChange={e => setAddress(e.target.value)} type="text" placeholder="Enter address"/>
-                </label>
-            </form>
-                <div className="btn-group">
-                    {/* Insert Data  */}
-                    <button onClick={(e)=>{
-                        e.preventDefault();
-                        fetch('http://localhost:8080/api/student/add',{
-                            method: "POST",
-                            body: JSON.stringify(hd),
-                            headers:{
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                    }} className="m-2" > Sign Up </button>
+            <main className="main1 justify-content-center align-items-center">
+                <section className="m-5">
+                    <div className="row g-2 justify-content-center align-items-center">
+                        <div className="col-lg-8 col-md-12">
+                            <div className="card p-3">
+                                <form className="justify-content-center align-items-center">
+                                    <label className="m-2">
+                                    <input id="studentId" value={studentId} onChange={e => setStudentId(e.target.value)} type="text" placeholder="Enter student ID"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="name" value={name} onChange={e => setName(e.target.value)} type="text" placeholder="Enter name"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="gender" value={gender} onChange={e => setGender(e.target.value)} type="text" placeholder="Enter gender"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="phone" value={phone} onChange={e => setPhone(e.target.value)} type="text" placeholder="Enter phone"/>
+                                    </label>
+                            
+                            
+                                    <label className="m-2">
+                                    <input id="email" value={email} onChange={e => setEmail(e.target.value)} type="text" placeholder="Enter email address"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="degree" value={degree} onChange={e => setDegree(e.target.value)} type="text" placeholder="Enter degree"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="institute" value={institute} onChange={e => setInstitute(e.target.value)} type="text" placeholder="Enter university name"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="cgpa" value={gpa} onChange={e => setGpa(e.target.value)} type="text" placeholder="Enter cgpa"/>
+                                    </label>
+                            
+                                    <label className="m-2">
+                                    <input id="passingYear" value={passingYear} onChange={e => setPassingYear(e.target.value)} type="text" placeholder="Enter passingYear"/>
+                                    </label>
+                            
+                            
+                                    <label className="m-2">
+                                    <input id="address" value={address} onChange={e => setAddress(e.target.value)} type="text" placeholder="Enter address"/>
+                                    </label>
 
-                    <button onClick={previous} className="btn-firstpage" > Previous </button>
-                </div>
-            </div>
+                                    
+                                </form>
+
+                                <div className="btn-group">
+                                        {/* Insert Data  */}
+                                        <button onClick={(e)=>{
+                                            e.preventDefault();
+                                            if(hd.name.length>0 && hd.gender.length>0 && hd.gpa.length>0 && hd.institute.length>0 && hd.passingYear.length>0 && hd.phone.length>0 && hd.studentId.length>0 && hd.address.length>0 && hd.degree.length>0){
+                                                fetch('http://localhost:8080/api/student/add',{
+                                                    method: "POST",
+                                                    body: JSON.stringify(hd),
+                                                    headers:{
+                                                        'Content-Type': 'application/json'
+                                                    }
+                                                })
+                                                .then((response) => {
+                                                    alert("Data Insertion Successfully")
+                                                 })
+                                                .catch((error) => {
+                                                    alert("Server connection error")
+                                                });
+                                            }else{
+                                                alert("Invalid Data");
+                                            }
+                                        }} className="button-style1" > Sign Up </button>
+
+                                        <button onClick={previous} className="button-style2" > Previous </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     );
 }
