@@ -30,4 +30,9 @@ public class StudentServiceImpl implements StudentService{
     public void updateStudent(Student student) {
         studentRepository.save(student);
     }
+
+    @Override
+    public void deleteStudent(String studentId) {
+        studentRepository.deleteById(studentId);
+    }
 }

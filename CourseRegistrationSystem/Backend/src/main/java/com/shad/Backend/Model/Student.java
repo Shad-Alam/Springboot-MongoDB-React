@@ -16,7 +16,7 @@ public class Student {
     private String degree;
     private String institute;
     private String gpa;
-    private String passingYear;
+    private String password;
     private String address;
 
     public Student(){
@@ -33,7 +33,7 @@ public class Student {
         this.degree = degree;
         this.institute = institute;
         this.gpa = gpa;
-        this.passingYear = passingYear;
+        this.password = passingYear;
         this.address = address;
     }
 
@@ -110,11 +110,11 @@ public class Student {
     }
 
     public String getPassingYear() {
-        return passingYear;
+        return password;
     }
 
     public void setPassingYear(String passingYear) {
-        this.passingYear = passingYear;
+        this.password = passingYear;
     }
 
     public String getAddress() {

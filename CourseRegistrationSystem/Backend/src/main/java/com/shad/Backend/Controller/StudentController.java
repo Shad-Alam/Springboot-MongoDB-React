@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin("http://localhost:3000/")
-
 @RestController
 @RequestMapping("/api")
 @CrossOrigin
@@ -45,5 +43,10 @@ public class StudentController {
     @GetMapping("/student/get/all")
     public List<Student> getAllStudent(){
         return studentService.studentList();
+    }
+
+    @DeleteMapping("/student/delete/{id}")
+    public void deleteStudent(@PathVariable("id") String studentId){
+        studentService.deleteStudent(studentId);
     }
 }
