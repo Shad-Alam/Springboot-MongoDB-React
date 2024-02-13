@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 const Firstpage = () => {
     // get all data
@@ -40,6 +41,8 @@ const Firstpage = () => {
     };
 
     console.log(">>> " + studentId);
+    const navigate = useNavigate();
+    const previous = () => navigate("/LoginPage", { replace: true });
 
     return (
         <div className="container1" id="page-1">
@@ -87,17 +90,21 @@ const Firstpage = () => {
                 <input id="address" value={address} onChange={e => setAddress(e.target.value)} type="text" placeholder="Enter address"/>
                 </label>
             </form>
-                {/* Insert Data  */}
-                <button onClick={(e)=>{
-                    e.preventDefault();
-                    fetch('http://localhost:8080/api/student/add',{
-                        method: "POST",
-                        body: JSON.stringify(hd),
-                        headers:{
-                            'Content-Type': 'application/json'
-                        }
-                    });
-                }} className="m-2" > Sign Up </button>
+                <div className="btn-group">
+                    {/* Insert Data  */}
+                    <button onClick={(e)=>{
+                        e.preventDefault();
+                        fetch('http://localhost:8080/api/student/add',{
+                            method: "POST",
+                            body: JSON.stringify(hd),
+                            headers:{
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                    }} className="m-2" > Sign Up </button>
+
+                    <button onClick={previous} className="btn-firstpage" > Previous </button>
+                </div>
             </div>
         </div>
     );
