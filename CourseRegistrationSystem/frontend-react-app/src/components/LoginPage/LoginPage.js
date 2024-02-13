@@ -61,7 +61,6 @@ const Firstpage = () => {
                 <input id="phone" value={phone} onChange={e => setPhone(e.target.value)} type="text" placeholder="Enter phone"/>
                 </label>
         
-        
                 <label className="m-2">
                 <input id="email" value={email} onChange={e => setEmail(e.target.value)} type="text" placeholder="Enter email address"/>
                 </label>
