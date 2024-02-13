@@ -10,8 +10,8 @@ const Firstpage = () => {
 
     return (
         <div className="container2" id="">
-            <main className="main1">
-                <section className="">
+            <main className="main1 justify-content-center align-items-center">
+                <section className="m-5">
                     <div className="row g-2">
                         <div className="col-lg-6 col-md-12">
                             <div className="card border-0 h-100" >
@@ -22,10 +22,10 @@ const Firstpage = () => {
                         </div>
             
                         <div className="col-lg-6 col-md-12">
-                            <div className="card border-0 h-100">
+                            <div className="card border-0 h-100 justify-content-center align-items-center">
                                 <form className="p-3 justify-content-center align-items-center">
                                     <div className="mb-3 row wrap-style">
-                                        <h1 className="text-style1"> Sign In </h1>
+                                        <h1 className="text-style1"> UMS </h1>
                                     </div>
 
                                     <div className="row mb-3 justify-content-center align-items-center">
