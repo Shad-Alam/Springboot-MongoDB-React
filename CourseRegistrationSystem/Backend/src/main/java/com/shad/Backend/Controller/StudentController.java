@@ -33,18 +33,13 @@ public class StudentController {
         studentService.updateStudent(student);
     }
 
-
-    @GetMapping("/groups")
-    List<Student> groups() {
-        return studentService.studentList();
-    }
-
     // get all student list
     @GetMapping("/student/get/all")
     public List<Student> getAllStudent(){
         return studentService.studentList();
     }
 
+    // delete student by studentId
     @DeleteMapping("/student/delete/{id}")
     public void deleteStudent(@PathVariable("id") String studentId){
         studentService.deleteStudent(studentId);
