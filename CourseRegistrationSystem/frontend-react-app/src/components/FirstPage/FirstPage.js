@@ -3,19 +3,6 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
 const Firstpage = () => {
-    // get all data
-    useEffect(() => {
-        axios.get(
-            `http://localhost:8080/api/student/get/all`
-        )
-        .then((response) => {
-           console.log(response)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    }, []);
-
     const [studentId, setStudentId] = useState("");
     const [name, setName] = useState("");
     const [gender, setGender] = useState("");
@@ -86,14 +73,12 @@ const Firstpage = () => {
                                     </label>
                             
                                     <label className="m-2">
-                                    <input id="passingYear" value={passingYear} onChange={e => setPassingYear(e.target.value)} type="text" placeholder="Enter passingYear"/>
-                                    </label>
-                            
-                            
-                                    <label className="m-2">
                                     <input id="address" value={address} onChange={e => setAddress(e.target.value)} type="text" placeholder="Enter address"/>
                                     </label>
 
+                                    <label className="m-2">
+                                    <input id="password" value={passingYear} onChange={e => setPassingYear(e.target.value)} type="password" placeholder="Enter password"/>
+                                    </label>
                                     
                                 </form>
 
@@ -116,11 +101,11 @@ const Firstpage = () => {
                                                     alert("Server connection error")
                                                 });
                                             }else{
-                                                alert("Invalid Data");
+                                                alert("Invalid Data. Fill Up All.");
                                             }
-                                        }} className="button-style1" > Sign Up </button>
+                                        }} className="button-style1 m-2" > Sign Up </button>
 
-                                        <button onClick={previous} className="button-style2" > Previous </button>
+                                        <button onClick={previous} className="button-style2 m-2" > Previous </button>
                                 </div>
                             </div>
                         </div>
